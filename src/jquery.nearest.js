@@ -23,7 +23,20 @@
  * $.touching()
  * $(elem).touching()
  */
-;(function ($, undefined) {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['exports', 'jQuery'], factory);
+  } else if (typeof exports === 'object') {
+    // CommonJS
+    factory(exports, require('jquery'));
+  } else {
+    // Browser globals
+    factory((root.commonJsStrict = {}), root.jQuery);
+  }
+}(this, function (exports, $) {  
+
+	exports.action = {};
 
 	/**
 	 * Internal method that does the grunt work
@@ -203,7 +216,7 @@
 		 *                     but it's good to have a consistent API
 		 * @return jQuery object containing matching elements in selector
 		 */
-		$[name] = function (point, selector, options) {
+		$[name] = exports.action[name] = function (point, selector, options) {
 			if (!point || point.x === undefined || point.y === undefined) {
 				return $([]);
 			}
@@ -250,4 +263,5 @@
 			return this.pushStack(nearest(selector, opts, this));
 		};
 	});
-})(jQuery);
+
+}));

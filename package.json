@@ -1,0 +1,25 @@
+{
+  "name": "jquery-nearest",
+  "version": "1.3.0",
+  "description": "Finds elements closest to a single point based on screen location and pixel dimensions.",
+  "main": "src/jquery.nearest.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicholasstephan/jquery-nearest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholasstephan/jquery-nearest/issues"
+  },
+  "homepage": "https://github.com/nicholasstephan/jquery-nearest",
+  "dependencies": {
+    "jquery": "^2.1.1"
+  }
+}
