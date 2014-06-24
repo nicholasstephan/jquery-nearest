@@ -36,8 +36,6 @@
   }
 }(this, function (exports, $) {  
 
-	exports.action = {};
-
 	/**
 	 * Internal method that does the grunt work
 	 *
@@ -216,7 +214,7 @@
 		 *                     but it's good to have a consistent API
 		 * @return jQuery object containing matching elements in selector
 		 */
-		$[name] = exports.action[name] = function (point, selector, options) {
+		$[name] = exports[name] = function (point, selector, options) {
 			if (!point || point.x === undefined || point.y === undefined) {
 				return $([]);
 			}
